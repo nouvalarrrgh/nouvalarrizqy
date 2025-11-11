@@ -264,10 +264,10 @@ export default function App() {
           desc: "Website portofolio modern dengan animasi halus dan navigasi dinamis.",
           href: "https://nouvalarrizqy12-hg3u.vercel.app/",
         },{
-          img: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80",
-          title: "AI Chatbot Project",
-          desc: "Chatbot cerdas berbasis OpenAI API dengan tampilan modern dan warna gradien dinamis.",
-          href: "/chatbot",
+          img: "https://lh3.googleusercontent.com/d/1aZJ2m67_8OVYy7e8mDxIpO_RJijt9oGX=s600",
+          title: "Undangan Digital",
+          desc: "Platform Undangan digital untuk pernikahan, khitanan, wisuda, ulang tahun dan ucapan hari besar.",
+          href: "https://vintation.com/catalog/galbi%20invitation",
           isLocal: true,
         },
         {
