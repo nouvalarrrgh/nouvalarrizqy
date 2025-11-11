@@ -66,6 +66,8 @@ export default function App() {
       setSelectedImageIndex((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length);
   };
 
+  const [menuOpen, setMenuOpen] = useState(false);
+
    return (
     <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
       {/* HEADER */}
