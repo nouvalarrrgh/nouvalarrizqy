@@ -66,19 +66,50 @@ export default function App() {
       setSelectedImageIndex((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length);
   };
 
-  return (
+   return (
     <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
       {/* HEADER */}
-      <header className="flex justify-between items-center p-6 fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md shadow z-50">
-        <h1 className="text-2xl font-bold text-blue-700">MUHAMMAD NOUVAL AR-RIZQY</h1>
-        <nav className="space-x-4">
+      <header className="flex justify-between items-center p-4 fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md shadow z-50">
+        <h1 className="text-lg font-bold text-blue-700">MUHAMMAD NOUVAL AR-RIZQY</h1>
+
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex space-x-3">
           {["home", "tentang", "karya", "project", "prestasi"].map((p) => (
             <Button key={p} variant={page === p ? "default" : "outline"} onClick={() => navigate(p)}>
               {p.charAt(0).toUpperCase() + p.slice(1)}
             </Button>
           ))}
         </nav>
+
+        {/* MOBILE MENU BUTTON */}
+        <button
+          onClick={() => setMenuOpen((s) => !s)}
+          aria-label="Toggle menu"
+          className="md:hidden p-2 border rounded-lg"
+        >
+          <span className="block w-6 h-[2px] bg-gray-800 mb-1"></span>
+          <span className="block w-6 h-[2px] bg-gray-800 mb-1"></span>
+          <span className="block w-6 h-[2px] bg-gray-800"></span>
+        </button>
       </header>
+
+      {/* MOBILE NAV MENU */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            className="md:hidden bg-white shadow p-4 space-y-3 fixed top-16 left-0 right-0 z-40"
+          >
+            {["home", "tentang", "karya", "project", "prestasi"].map((p) => (
+              <Button key={p} variant={page === p ? "default" : "outline"} onClick={() => navigate(p)} className="w-full">
+                {p.charAt(0).toUpperCase() + p.slice(1)}
+              </Button>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* MAIN CONTENT */}
       <AnimatePresence mode="wait">
