@@ -280,12 +280,6 @@ export default function App() {
           href: "https://vintation.com/catalog/galbi%20invitation",
           isLocal: true,
         },
-        {
-          img: "https://via.placeholder.com/400x250",
-          title: "Galeri Desain Digital",
-          desc: "Showcase karya desain dengan galeri fullscreen dan transisi lembut.",
-          href: "https://my-designs.netlify.app",
-        },
       ].map((proj, i) => (
         <motion.div
           key={i}
