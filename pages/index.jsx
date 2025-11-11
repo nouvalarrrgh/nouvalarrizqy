@@ -30,10 +30,12 @@ export default function App() {
   ];
 
   const skills = [
-    { name: "Adobe Photoshop", level: 90 },
-    { name: "Adobe Illustrator", level: 85 },
+    { name: "Adobe Photoshop", level: 85 },
+    { name: "Adobe Illustrator", level: 75 },
     { name: "Canva", level: 95 },
-    { name: "UI/UX Design", level: 80 },
+    { name: "CorelDraw", level: 95 },
+    { name: "C++", level: 80 },
+    { name: "Javascript", level: 80 },
   ];
 
   const galleryImages = [...karyaList.map(k => k.img), ...prestasiList.map(p => p.img)];
@@ -181,6 +183,13 @@ export default function App() {
                  <li>Sekretaris Organisasi Santri Ma'had Al-Ishlah (OSMI) (Januari - Desember 2024)</li>
                   <li>Divisi Dokumentasi OSMI (Januari - Desember 2024)</li>
                   <li>Andalan Koordinator Urusan Perlengkapan (Ankuperkap) (Januari - Desember 2024)</li>
+                </ul>
+              </Card>
+
+              {/* Pengalaman */}
+              <Card className="p-6 text-left">
+                <h3 className="text-xl font-semibold mb-3 text-blue-700">Kepanitiaan</h3>
+                <ul className="list-disc ml-6 space-y-1 text-gray-700">
                   <li>Sekretaris Musabaqoh Tarik Suara Al-Ishlah XI (Januari 2024)</li>
                   <li>Sekretaris Hiking in The Village III (Januari - Februari 2024)</li>
                   <li>Sekretaris Drama Contest VI (Februari 2024)</li>
