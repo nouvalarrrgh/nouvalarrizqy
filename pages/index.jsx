@@ -118,6 +118,7 @@ export default function App() {
           <span className="block w-6 h-[2px] bg-gray-800 mb-1"></span>
           <span className="block w-6 h-[2px] bg-gray-800"></span>
         </button>
+        </div>
       </header>
 
       {/* MOBILE NAV MENU */}
