@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from "react";
+import IntroScreen from "../components/IntroScreen";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-export default function App() {
-  const [page, setPage] = useState("home");
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
-  const [bg, setBg] = useState("linear-gradient(to bottom right, #ebf8ff, #ffffff)");
+function App() {
+  export default function IndexPage() {
+  const [showIntro, setShowIntro] = useState(true);
 
+  useEffect(() => {
+    const lang = localStorage.getItem("lang");
+    if (lang) setShowIntro(false);
+  }, []);
+
+  return showIntro ? <IntroScreen onFinish={() => setShowIntro(false)} /> : <App />;
+}
+  
   const karyaList = [
     { title: "Desain 3D Background Panggung Gembira 625", desc: "Desain Background 3D untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1Q0YWmEJMs2dAOf_QdwSY0vuqGfFxXzCj=s600" },
     { title: "Logo dan Maskot Panggung Gembira 625", desc: "Logo dan maskot iconic untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1-IjJRj9S0A4LXrxBQv94ZHQ6X_duY8xX=s600" },
