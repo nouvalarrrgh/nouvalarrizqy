@@ -340,7 +340,7 @@ export default function App() {
         <h2 className="text-3xl font-semibold mb-4">Hubungi Saya</h2>
         <p className="text-gray-600 mb-6">Tertarik bekerja sama atau ingin berdiskusi?</p>
         <div className="flex justify-center gap-6">
-          <a href="mailto:bagobago955.com"><Mail className="w-6 h-6" /></a>
+          <a href="mailto:bagobago955@gmail.com"><Mail className="w-6 h-6" /></a>
           <a href="https://github.com/bagobago955-desainer" target="_blank"><Github className="w-6 h-6" /></a>
           <a href="https://www.linkedin.com/in/muhammad-nouval-ar-rizqy-9ba777378" target="_blank"><Linkedin className="w-6 h-6" /></a>
         </div>
