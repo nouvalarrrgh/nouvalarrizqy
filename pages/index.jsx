@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
-import IntroScreen from "../components/IntroScreen";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-function App() {
-  export default function IndexPage() {
-  const [showIntro, setShowIntro] = useState(true);
+export default function App() {
+  const [page, setPage] = useState("home");
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(null);
+  const [bg, setBg] = useState("linear-gradient(to bottom right, #ebf8ff, #ffffff)");
 
-  useEffect(() => {
-    const lang = localStorage.getItem("lang");
-    if (lang) setShowIntro(false);
-  }, []);
-
-  return showIntro ? <IntroScreen onFinish={() => setShowIntro(false)} /> : <App />;
-}
-  
   const karyaList = [
     { title: "Desain 3D Background Panggung Gembira 625", desc: "Desain Background 3D untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1Q0YWmEJMs2dAOf_QdwSY0vuqGfFxXzCj=s600" },
     { title: "Logo dan Maskot Panggung Gembira 625", desc: "Logo dan maskot iconic untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1-IjJRj9S0A4LXrxBQv94ZHQ6X_duY8xX=s600" },
@@ -286,6 +279,12 @@ function App() {
           desc: "Platform Undangan digital untuk pernikahan, khitanan, wisuda, ulang tahun dan ucapan hari besar.",
           href: "https://vintation.com/catalog/galbi%20invitation",
           isLocal: true,
+        },
+        {
+          img: "https://via.placeholder.com/400x250",
+          title: "Galeri Desain Digital",
+          desc: "Showcase karya desain dengan galeri fullscreen dan transisi lembut.",
+          href: "https://my-designs.netlify.app",
         },
       ].map((proj, i) => (
         <motion.div
