@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import IntroScreen from "../components/IntroScreen";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Github, Linkedin, Mail, ChevronLeft, ChevronRight, X } from "lucide-react";
 
-function App() {
+export default function App() {
   const [page, setPage] = useState("home");
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
@@ -281,12 +280,6 @@ function App() {
           href: "https://vintation.com/catalog/galbi%20invitation",
           isLocal: true,
         },
-        {
-          img: "https://via.placeholder.com/400x250",
-          title: "Galeri Desain Digital",
-          desc: "Showcase karya desain dengan galeri fullscreen dan transisi lembut.",
-          href: "https://my-designs.netlify.app",
-        },
       ].map((proj, i) => (
         <motion.div
           key={i}
@@ -385,20 +378,5 @@ function App() {
         )}
       </AnimatePresence>
     </div>
-  );
-}
-
-export default function IndexPage() {
-  const [showIntro, setShowIntro] = useState(true);
-
-  useEffect(() => {
-    const lang = localStorage.getItem("lang");
-    if (lang) setShowIntro(false);
-  }, []);
-
-  return showIntro ? (
-    <IntroScreen onFinish={() => setShowIntro(false)} />
-  ) : (
-    <App />
   );
 }
