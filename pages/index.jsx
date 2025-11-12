@@ -408,5 +408,6 @@ export default function App() {
         )}
       </AnimatePresence>
     </div>
+     </div>
   );
 }
