@@ -365,6 +365,8 @@ export default function App() {
           <a href="mailto:bagobago955@gmail.com"><Mail className="w-6 h-6" /></a>
           <a href="https://github.com/bagobago955-desainer" target="_blank"><Github className="w-6 h-6" /></a>
           <a href="https://www.linkedin.com/in/muhammad-nouval-ar-rizqy-9ba777378" target="_blank"><Linkedin className="w-6 h-6" /></a>
+          <a href="https://wa.me/6283836487767" target="_blank"><Phone className="w-6 h-6 text-green-500" /></a>
+          <a href="https://instagram.com/nouvalarr_rgh" target="_blank"><Instagram className="w-6 h-6 text-pink-500" /></a>
         </div>
       </section>
 
