@@ -13,8 +13,6 @@
     "react-dom": "^18.2.0",
     "framer-motion": "^10.0.0",
     "lucide-react": "^0.360.0"
-    "react-tsparticles": "^2.12.2",
-    "tsparticles": "^2.12.2"
   },
   "devDependencies": {
     "tailwindcss": "^3.3.0",
