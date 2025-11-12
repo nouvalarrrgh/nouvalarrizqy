@@ -2,7 +2,18 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
-import { Github, Linkedin, Mail, ChevronLeft, ChevronRight, X } from "lucide-react";
+import {
+  Github,
+  Linkedin,
+  Mail,
+  Instagram,
+  ChevronLeft,
+  ChevronRight,
+  Moon,
+  Sun,
+  X,
+  Phone,
+} from "lucide-react";
 
 export default function App() {
   const [page, setPage] = useState("home");
@@ -69,10 +80,15 @@ export default function App() {
       setSelectedImageIndex((selectedImageIndex - 1 + galleryImages.length) % galleryImages.length);
   };
 
+  const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleDarkMode = () => setDarkMode(!darkMode);
+  const year = new Date().getFullYear();
+
    return (
-    <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
+     <div className={`${darkMode ? "dark" : ""}`}>
+       <div className="min-h-screen transition-colors duration-500" style={{ background: bg }}>
       {/* HEADER */}
       <header className="flex justify-between items-center p-4 fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md shadow z-50">
         <h1 className="text-lg font-bold text-blue-700">MUHAMMAD NOUVAL AR-RIZQY</h1>
@@ -85,6 +101,12 @@ export default function App() {
             </Button>
           ))}
         </nav>
+
+        <div className="flex items-center gap-2">
+            {/* Dark Mode Toggle */}
+            <button onClick={toggleDarkMode} aria-label="Toggle dark mode" className="p-2 rounded-lg border hover:bg-gray-200 dark:hover:bg-gray-700">
+              {darkMode ? <Sun className="w-5 h-5 text-yellow-400" /> : <Moon className="w-5 h-5 text-gray-800" />}
+            </button>
 
         {/* MOBILE MENU BUTTON */}
         <button
@@ -345,6 +367,11 @@ export default function App() {
           <a href="https://www.linkedin.com/in/muhammad-nouval-ar-rizqy-9ba777378" target="_blank"><Linkedin className="w-6 h-6" /></a>
         </div>
       </section>
+
+        {/* FOOTER */}
+        <footer className="py-6 border-t text-center text-gray-500 dark:text-gray-400 text-sm">
+          © {year} Muhammad Nouval Ar-Rizqy. Dibuat dengan 💙 menggunakan React & TailwindCSS.
+        </footer>
 
       {/* ==== IMAGE MODAL ==== */}
       <AnimatePresence>
