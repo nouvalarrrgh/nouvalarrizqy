@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "../components/ui/card";
 import { Button } from "../components/ui/button";
+import Hero3DFlores from "../components/Hero3DFlores";
 import {
   Github,
   Linkedin,
@@ -20,6 +21,14 @@ export default function App() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const [bg, setBg] = useState("linear-gradient(to bottom right, #ebf8ff, #ffffff)");
+
+  const pageToScene = {
+  home: "pantai",
+  tentang: "hutan",
+  karya: "tebing",
+  project: "airterjun",
+  prestasi: "pantai"
+};
 
   const karyaList = [
     { title: "Desain 3D Background Panggung Gembira 625", desc: "Desain Background 3D untuk pagelaran seni akbar - Panggung Gembira 625 -.", img: "https://lh3.googleusercontent.com/d/1Q0YWmEJMs2dAOf_QdwSY0vuqGfFxXzCj=s600" },
